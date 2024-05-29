@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <link rel="stylesheet" href="registration.css"/>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="registration">
+        <div class="container">
+            <h1>Registration Form</h1>
+            <label for="profile-picture">Profile Picture</label>
+            <img src="file" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+            <input type="file" placeholder="profile-picture" name="profile-picture" capture required>
+            <br>
+            <lebel for="first_name">First Name</lebel>
+                <input type="text" placeholder="First Name" name="first_name" id="first_name" required><br>
+            <label for="last_name">Last Name</label>
+                <input type="text" placeholder="Last Name" name="last_name" id="last_name" required><br>
+            <label for="gender">Gender</label>
+                <select name="gender">
+                <option value="">Please select one</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="other">Other</option>
+                <option value="Prefer not to answer">Prefer not to Answer</option>
+                </select><br>
+            <label for="dob">Date of birth</label>
+                <input type="date" placeholder="Date of birth" id="dob" name="dob"><br>
+
+            <label for="email">Email</label>
+                <input type="text" placeholder="mbgxdw@uoiea.com" name="email" id="email" required><br>
+            <label for="psw">Password</label>
+                <input type="password" placeholder="Enter Password" name="psw" id="psw" required><br>
+
+            <label for="psw-repeat">Repeat Password</label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required><br>
+
+            <button type="submit" class="registerbtn">Register</button>
+
+
+          <div class="container-signin">
+            <p>Already have an account? <a href="index.html">Sign in</a>.</p>
+          </div>
+            <a href="profile.html"></a>
+        </form>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

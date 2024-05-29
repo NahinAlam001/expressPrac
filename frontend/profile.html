@@ -1,0 +1,58 @@
+<script>
+    async function fetchProfile() {
+        const response = await fetch("/api/profile", {
+            method: "GET",
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+        });
+        const data = await response.json();
+        // Populate profile fields with data
+    }
+
+    async function updateProfile() {
+        const profileData = {
+            firstName: document.getElementById("firstName").value,
+            lastName: document.getElementById("lastName").value,
+            gender: document.getElementById("gender").value,
+            dateOfBirth: document.getElementById("dateOfBirth").value,
+            email: document.getElementById("email").value,
+        };
+
+        const response = await fetch("/api/profile", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+            body: JSON.stringify(profileData),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            alert("Profile updated successfully");
+        } else {
+            alert("Failed to update profile: " + data.message);
+        }
+    }
+
+    async function deleteAccount() {
+        const response = await fetch("/api/profile", {
+            method: "DELETE",
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            alert("Account deleted successfully");
+            window.location.href = "/login.html";
+        } else {
+            alert("Failed to delete account: " + data.message);
+        }
+    }
+
+    // Call fetchProfile on page load
+    fetchProfile();
+</script>
